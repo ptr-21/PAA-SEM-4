@@ -4,8 +4,8 @@
 using namespace std;
 int main(){
     int n;
-    cout << "Masukkan jumlah bilangan: "; //sebagai printf
-    cin >> n; // sebagai scanf
+    cout << "Masukkan jumlah bilangan: ";
+    cin >> n;
     vector<int> numbers(n);
     for (int i = 0; i < n; i++)
     {
@@ -21,7 +21,6 @@ int main(){
             {
                 sum += i;
             }
-            
         }
         if (num != 1)
         {
