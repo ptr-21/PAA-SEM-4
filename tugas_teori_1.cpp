@@ -1,32 +1,24 @@
 #include <iostream>
-#include <stdio.h>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 int main(){
-    int n;
-    cout << "Masukkan jumlah bilangan: ";
-    cin >> n;
-    vector<int> numbers(n);
-    for (int i = 0; i < n; i++)
+    const int max = 50001;
+    long long int sum[max];
+    for (int i = 1; i < max; i++)
     {
-        cout<<"Masukkan bilangan ke-"<< i+1 << ": ";
-        cin>>numbers[i];
+        for (int j = 2*i; j < max; j+=i)
+        {
+            sum[j] += i;
+        }
+        
     }
-    for (const auto& num : numbers)
+    int i;
+    cin >> i;
+    while (i--)
     {
-        int sum = 0;
-        for (int i = 2; i <= num/2; i++)
-        {
-            if (num % i == 0)
-            {
-                sum += i;
-            }
-        }
-        if (num != 1)
-        {
-            sum += 1;
-        }
-        cout << sum << endl;
+        int n;
+        cin >> n;
+        cout << sum[n] << "\n" << endl;
     }
     return 0;
 }
